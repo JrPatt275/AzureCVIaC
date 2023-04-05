@@ -1,5 +1,5 @@
 param location string = 'uksouth'
-param storageAccountName string = 'jrpCV${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'jrpcv${uniqueString(resourceGroup().id)}'
 
 module storageaccount 'modules/storage/jrpModStorage.bicep' = {
   name: 'storageAccount'
