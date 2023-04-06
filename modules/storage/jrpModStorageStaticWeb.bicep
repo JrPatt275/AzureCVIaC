@@ -2,6 +2,12 @@
 param location string
 param storageAccountName string
 
+@description('These will be passed as environmental variables to the powershell script')
+param IndexDocPath string
+param IndexDocContents string
+param ErrorDocPath string
+param ErrorDocContents string
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' existing = {
   name: storageAccountName
 }
@@ -33,8 +39,34 @@ resource deploymentScript 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   }
   properties: {
     azPowerShellVersion: '3.0'
-    primaryScriptUri: ''
-
+    primaryScriptUri: 'https://raw.githubusercontent.com/JrPatt275/AzureCVIaC/staticweb/scripts/enablestaticweb.ps1'
+    retentionInterval: 'PT4H'
+    environmentVariables: [
+      {
+        name: 'ResourceGroupName'
+        value: resourceGroup().name
+      }
+      {
+          name: 'StorageAccountName'
+          value: storageAccount.name
+      }
+      {
+        name: 'IndexDocPath'
+        value: IndexDocPath
+      }
+      {
+        name: 'IndexDocContents'
+        value: IndexDocContents
+      }
+      {
+        name: 'ErrorDocPath'
+        value: ErrorDocPath
+      }
+      {
+        name: 'ErrorDocContents'
+        value: ErrorDocContents
+      }
+    ]
 
   }
 }
