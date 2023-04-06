@@ -48,7 +48,7 @@ resource deploymentScript 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
       }
       {
           name: 'StorageAccountName'
-          value: storageAccount.name
+          value: storageAccountName
       }
       {
         name: 'IndexDocPath'
