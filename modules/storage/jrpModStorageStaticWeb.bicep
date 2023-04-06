@@ -69,4 +69,9 @@ resource deploymentScript 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
     ]
 
   }
+  dependsOn: [
+    storageAccount
+  ]
 }
+
+output endpoint string = storageAccount.properties.primaryEndpoints.web
