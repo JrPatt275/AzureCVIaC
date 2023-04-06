@@ -1,5 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+Select-AzSubscription -Name 'James R Patterson sub 1'
 Get-AzContext -ListAvailable | Where{$_.Name -match 'James R Patterson sub 1'} | Set-AzContext
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $env:ResourceGroupName -AccountName $env:StorageAccountName
 
