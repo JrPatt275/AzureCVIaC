@@ -18,7 +18,7 @@ resource deploymentScriptIdentity 'Microsoft.ManagedIdentity/userAssignedIdentit
 }
 
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  //scope: storageAccount
+  scope: storageAccount
   name: guid(resourceGroup().id, deploymentScript.id, subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '17d1049b-9a84-46fb-8f53-869881c3d3ab'))
   properties: {
     roleDefinitionId: subscriptionResourceId('microsoft.Authorization/roleDefinitions', '17d1049b-9a84-46fb-8f53-869881c3d3ab')
