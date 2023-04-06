@@ -38,7 +38,7 @@ resource deploymentScript 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
     }
   }
   properties: {
-    azPowerShellVersion: '3.0'
+    azPowerShellVersion: '8.3'
     primaryScriptUri: 'https://raw.githubusercontent.com/JrPatt275/AzureCVIaC/staticweb/scripts/enablestaticweb.ps1'
     retentionInterval: 'PT4H'
     environmentVariables: [
