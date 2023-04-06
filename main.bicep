@@ -15,7 +15,7 @@ module staticweb 'modules/storage/jrpModStorageStaticWeb.bicep' = {
   name: 'staticWeb'
   params: {
     location: location
-    storageAccountName: storageAccountName
+    storageAccountName: storageaccount.name
     IndexDocPath: 'index.html'
     IndexDocContents: '<h1>This is an Azure Storage Account Static Website</h1>'
     ErrorDocPath: 'error.html'
