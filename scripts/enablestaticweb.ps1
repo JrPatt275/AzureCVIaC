@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-Select-AzSubscription '45fe69ba-142f-4256-aa8d-1fd47761c12c'
+Get-AzContext -ListAvailable | Where{$_.Name -match 'James R Patterson sub 1'} | Set-AzContext
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $env:ResourceGroupName -AccountName $env:StorageAccountName
 
 # Enable the static website feature on the storage account.
