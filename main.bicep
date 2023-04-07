@@ -16,7 +16,7 @@ module storageaccount 'modules/storage/jrpModStorage.bicep' = {
 }
 
 module cdn 'modules/storage/jrpModCDN.bicep' = {
-  name: profileName
+  name: '${profileName}/default'
   params: {
     location: 'global'
     cdnSku: 'Standard_Microsoft'
