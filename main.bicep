@@ -1,7 +1,7 @@
 param location string = 'uksouth'
 param storageAccountName string = 'jrpcv${uniqueString(resourceGroup().id)}'
 param profileName string = 'jrpcvcdn'
-param endpointName string = 'jrpcvcdnendp'
+param endpointName string = 'jrpazurecv'
 
 var url = take(storageaccount.outputs.storageAccountUrl, (length(storageaccount.outputs.storageAccountUrl)-1))
 
@@ -20,7 +20,7 @@ module cdn 'modules/storage/jrpModCDN.bicep' = {
   params: {
     location: 'global'
     cdnSku: 'Standard_Microsoft'
-    endpointName: '${profileName}/${endpointName}'
+    endpointName: endpointName
     originUrl: substring(url, 8, (length(url)-8))
     profileName: profileName
   }
