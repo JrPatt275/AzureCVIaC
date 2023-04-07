@@ -1,7 +1,7 @@
 param location string = 'uksouth'
 param storageAccountName string = 'jrpcv${uniqueString(resourceGroup().id)}'
 param profileName string = 'jrpcvcdn'
-param endpointName string = 'jrpcvcdnendpoint'
+param endpointName string = 'jrpcvcdnendp'
 
 var url = take(storageaccount.outputs.storageAccountUrl, (length(storageaccount.outputs.storageAccountUrl)-1))
 
