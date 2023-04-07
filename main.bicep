@@ -16,9 +16,9 @@ module storageaccount 'modules/storage/jrpModStorage.bicep' = {
 module cdn 'modules/storage/jrpModCDN.bicep' = {
   name: profileName
   params: {
+    location: 'global'
     cdnSku: 'Standard_Microsoft'
     endpointName: '${profileName}/${endpointName}'
-    location: location
     originUrl: storageaccount.outputs.storageAccountUrl
     profileName: profileName
   }

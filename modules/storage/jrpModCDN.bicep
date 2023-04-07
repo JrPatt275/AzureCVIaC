@@ -1,5 +1,5 @@
 @description(' The location in which to deploy the resources')
-param location string
+param location string = 'global'
 
 @description('Name of the CDN profile')
 param profileName string
