@@ -88,4 +88,7 @@ resource endpoint 'Microsoft.Cdn/profiles/endpoints@2021-06-01' = {
       }
     ]
   }
+  dependsOn: [
+    profile
+  ]
 }
