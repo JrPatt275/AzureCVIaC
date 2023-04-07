@@ -7,6 +7,9 @@ param profileName string
 @description('Name of the endpoint. Must be unique')
 param endpointName string
 
+@description('Origin Name')
+param originName string = 'origin1'
+
 @description('URL of the origin')
 param originUrl string
 
@@ -81,7 +84,7 @@ resource endpoint 'Microsoft.Cdn/profiles/endpoints@2021-06-01' = {
     ]
     origins: [
       {
-        name: endpointName
+        name: originName
         properties: {
           hostName: originUrl
         }
