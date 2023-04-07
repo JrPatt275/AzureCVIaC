@@ -1,5 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+Set-AzureSubscription '45fe69ba-142f-4256-aa8d-1fd47761c12c'
+
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $env:ResourceGroupName -Name $env:StorageAccountName
 
 # Enable the static website feature on the storage account.
