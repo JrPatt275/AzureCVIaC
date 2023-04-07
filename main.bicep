@@ -19,7 +19,7 @@ module cdn 'modules/storage/jrpModCDN.bicep' = {
     location: 'global'
     cdnSku: 'Standard_Microsoft'
     endpointName: '${profileName}/${endpointName}'
-    originUrl: storageaccount.outputs.storageAccountUrl
+    originUrl: substring(storageaccount.outputs.storageAccountUrl, 7, (length(storageaccount.outputs.storageAccountUrl)-1))
     profileName: profileName
   }
 }
